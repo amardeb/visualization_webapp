@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Viz</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='dataset1.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <div class="w3-card-4" style="width:100%;">
+            <header class="w3-container w3-blue">
+              <h1>Viz: A data visualization tool</h1>
+            </header>
+        
+        </div>
+
+    </head>
+
+    <body>
+
+        <div>
+                <div class="w3-card-4" style="width:70%; margin-top:2cm;margin-left:4cm" onclick="Option1()">
+                        <header class="w3-container w3-blue" >
+                        <h1>Visualization 1</h1>
+                        </header>
+                    
+                        <div class="w3-container">
+                        <p>Ration between total courses offered by MIT and Harvard</p>
+                        </div>
+                    
+                </div>
+    
+                <div class="w3-card-4" style="width:70%; margin-top:1cm;margin-left:4cm" onclick="Option2()">
+                        <header class="w3-container w3-blue">
+                        <h1>Visualization 2</h1>
+                        </header>
+                    
+                        <div class="w3-container">
+                        <p>Comparison of types of courses offered</p>
+                        </div>
+                    
+                </div>
+
+                <div class="w3-card-4" style="width:70%; margin-top:1cm;margin-left:4cm;margin-bottom:2cm" onclick="Option3()">
+                        <header class="w3-container w3-blue">
+                        <h1>Visualization 3</h1>
+                        </header>
+                    
+                        <div class="w3-container">
+                        <p>Popularity of the courses offered by MIT and Harvard</p>
+                        </div>
+                    
+                </div>
+            </div>
+
+        <script>
+            function Option1(){
+                location.href='/dataset1/option1'
+            }
+
+            function Option2(){
+                location.href='/dataset1/option2'
+            }
+
+            function Option3(){
+                location.href='/dataset1/option3'
+            }
+
+        </script>
+
+    </body>
+</html>

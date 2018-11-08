@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Viz</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    </head>
+
+    <body style="background-color:rgb(255, 255, 255)">
+
+            <div item-width="250" item-height="250">
+                <canvas id="myChart" width="500" height="500"></canvas>
+            </div>
+            <script>
+                var X = []
+                var Y = []
+                var updateData = $.get('/dataset1/option3/data')
+                updateData.done(function(results){
+                    X = results.element;
+                    Y = results.number;
+                    var ctx = document.getElementById("myChart");
+    
+                    var myChart = new Chart(ctx, {
+                        type: 'radar',
+                        data: {
+                            labels: X,
+                            datasets: [{
+                                label:'Visualization',
+                                data: Y,
+                                backgroundColor: "rgba(179,181,108,0.2)",
+                                borderColor: "rgba(179,181,108,1)",
+                            }]
+                        }, 
+                        options: {
+                            scale: {
+                                ticks: {
+                                    beginAtZero: true,
+                                    min: 0,
+                                    max: 16
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Popularity of courses'
+                            }, 
+                            responsive: true,
+                            maintainAspectRatio: false
+                       }
+                    });
+                });    
+                
+            </script>
+
+    </body>
+
+</html>

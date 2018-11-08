@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Viz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script type="text/javascript" src="{{ url_for('static', filename='startpage.js') }}"></script>
+        <div class="w3-card-4" style="width:100%;">
+            <header class="w3-container w3-blue">
+              <h1>Viz: A data visualization tool</h1>
+            </header>
+        
+        </div>
+
+    </head>
+
+    <body>
+
+        <div style='display:flex'>
+            <div class="w3-card-4" style="width:32%; margin-top:4cm;margin-left:3.5cm" onclick="Button1()">
+                    <header class="w3-container w3-blue" >
+                    <h1>Dataset1</h1>
+                    </header>
+                
+                    <div class="w3-container">
+                    <p>Since edX launched in 2012, MIT and Harvard University have been deploying a wide range of free online courses. There are above 290 courses overall and some visualization is made from the data</p>
+                    </div>
+                
+            </div>
+
+            <div class="w3-card-4" style="width:32%; margin-top:4cm;margin-left:4cm" onclick="Button2()">
+                    <header class="w3-container w3-blue">
+                    <h1>Dataset2</h1>
+                    </header>
+                
+                    <div class="w3-container">
+                    <p>A busy city like New York has high traffic rate. So a survey visualization is made to show the busiest streets and hours in NYC</p>
+                    </div>
+                
+            </div>
+        </div>
+            
+
+    </body>
+
+</html>

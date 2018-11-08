@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Viz</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    </head>
+
+    <body style="background-color:rgb(255, 255, 255)">
+
+            <div item-width="250" item-height="250">
+                <canvas id="myChart" width="500" height="500"></canvas>
+            </div>
+            <script>
+                var X = []
+                var Y = []
+                var updateData = $.get('/dataset1/option1/data')
+                updateData.done(function(results){
+                    X = results.element;
+                    Y = results.number;
+                    var ctx = document.getElementById("myChart");
+    
+                    var myChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: X,
+                            datasets: [{
+                                data: Y,
+                                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+                            }]
+                        }, 
+                        options: {
+                            title: {
+                                display: true,
+                                text: 'Ratio of courses offered by MIT and Harvard'
+                            },
+                            legend: {
+                                display: false
+                            }, 
+                            responsive: true,
+                            maintainAspectRatio: false
+                       }
+                    });
+                });    
+                
+            </script>
+
+    </body>
+
+</html>
